@@ -19,22 +19,23 @@ class TowersOfHanoi
     end
 
     def render
-        
+        screen = ""
         (0..2).each do |row|
             (0..2).each do |col|
                 if towers[row][col].nil?
-                    print "|"
+                    screen += "|"
                 else
-                    print towers[row][col]
+                    screen += towers[row][col].to_s
                 end
             end
-            print "\n"
+            screen += "\n"
         end
+        screen
     end
 
     def play
         until won?
-            render
+            print render
             puts "What tower would you like to move from?"
             start_tower = gets.chomp.to_i
             puts "What tower would you like to move to?"

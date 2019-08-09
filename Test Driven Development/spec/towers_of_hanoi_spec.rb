@@ -13,7 +13,8 @@ describe TowersOfHanoi do
     describe "#move" do
         it "moves a piece from start tower to end tower" do
             towers.move(0, 1)
-            expect(towers.towers[0]).not_to include(1) 
+            expect(towers.towers[0]).not_to include(1)
+            expect(towers.towers[1]).to include(1)
         end
 
         it "raises an error if it can't move the piece" do
